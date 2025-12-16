@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Strength Checker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Base container style */
+        .container {
+            background-color: white;
+            padding: 30px;
+            width: 360px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Strength-based background colors */
+        .container.weak {
+            background-color: #f8d7da;   /* light red */
+        }
+
+        .container.moderate {
+            background-color: #fff3cd;   /* light orange */
+        }
+
+        .container.strong {
+            background-color: #d4edda;   /* light green */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container {{ level }}">
+        <h2>Password Strength Checker 🔐</h2>
+
+        <form method="POST">
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                required
+            >
+            <button type="submit">Check Strength</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                {{ result }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
