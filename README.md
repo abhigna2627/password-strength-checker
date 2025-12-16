@@ -1,26 +1,72 @@
 # Password Strength Checker 🔐
 
-A simple Python-based cybersecurity tool that checks the strength of a password using common security rules.
+A simple cybersecurity-focused Python project that checks password strength using common security rules and displays the result through a web interface.
 
-This project is built to understand how weak passwords contribute to attacks like brute-force and credential stuffing, and how basic validation can reduce risk.
+This project was built to understand how backend security logic connects to a frontend using Flask.
 
-## Features
-- Checks minimum length
-- Detects uppercase, lowercase, numbers, and special characters
-- Flags commonly used weak passwords
-- Classifies passwords as WEAK, MODERATE, or STRONG
+---
 
-## Why this matters
-Weak passwords are one of the most common causes of account compromise.  
-This tool demonstrates how basic security principles can be translated into real code.
+## 🚀 Features
 
-## How it works
-The script assigns a score based on password characteristics and compares it against known weak patterns.
+- Detects commonly used weak passwords
+- Checks password length
+- Validates use of:
+  - Uppercase letters
+  - Lowercase letters
+  - Numbers
+  - Special characters
+- Classifies passwords as:
+  - WEAK ❌
+  - MODERATE ⚠️
+  - STRONG ✅
+- Dynamic UI feedback:
+  - Container color changes based on password strength
 
-## How to run
-1. Make sure Python is installed
-2. Clone this repository
-3. Run the script:
+---
 
-```bash
-python password_checker.py
+## 🧠 Why this matters (Cybersecurity context)
+
+Weak passwords are one of the most common causes of:
+- Brute-force attacks
+- Credential stuffing
+- Account compromise
+
+This project demonstrates how basic password policies and validation rules can be implemented in real code and exposed safely through a web interface.
+
+---
+
+## 🛠 Tech Stack
+
+- Python
+- Flask (backend)
+- HTML + CSS (frontend)
+
+---
+
+## ⚙️ How it works
+
+1. User enters a password in the browser
+2. The form sends the data using a POST request
+3. Flask receives the password
+4. Python evaluates its strength using security rules
+5. Result and strength level are sent back to the frontend
+6. UI updates dynamically based on the result
+
+---
+
+## ▶️ How to run locally
+
+1. Clone the repository
+2. Install Flask:
+   ```bash
+   pip install flask
+
+
+2. Run the application:
+
+python app.py
+
+
+3. Open your browser and visit:
+
+http://127.0.0.1:5000/
